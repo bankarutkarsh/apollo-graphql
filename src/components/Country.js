@@ -23,45 +23,54 @@ const ProductList = () => {
               <a className="expand">
                 <h2>{i.name}</h2>
                 <span>
-                    <strong>Capital</strong> : {i.capital}
+                  <strong>Capital</strong> : {i.capital}
                 </span>
               </a>
-              <button onClick={()=> {setFlag(!flag); setItem(i)} }>Details</button>
+              <button
+                onClick={() => {
+                  setFlag(!flag);
+                  setItem(i);
+                }}
+              >
+                Details
+              </button>
             </li>
           </ul>
         </div>
       ))}
 
-{flag && (
+      {flag && (
         <section className="pop-registration">
           <section className="user-registration">
             <form action="#">
-              <h1>{item.name} - {item.emoji}</h1>
-              
+              <h1>
+                {item.name} - {item.emoji}
+              </h1>
+
               <div className="box">
-              <div>
-                    <strong>Capital</strong> : {item.capital}
+                <div>
+                  <strong>Capital</strong> : {item.capital}
                 </div>
                 <div>
-                    <strong>Native</strong> : {item.native}
+                  <strong>Native</strong> : {item.native}
                 </div>
                 <div>
-                    <strong>Reigion</strong> : {item.awsRegion}
+                  <strong>Reigion</strong> : {item.awsRegion}
                 </div>
                 <div>
-                    <strong>Phone-Code</strong> : {item.phone}
+                  <strong>Phone-Code</strong> : {item.phone}
                 </div>
                 <div>
-                    <strong>Currency</strong> : {item.currency}
+                  <strong>Currency</strong> : {item.currency}
                 </div>
                 <div>
-            
-                <strong>Languages</strong> : {item.languages.map((ln)=>(
-                    
-                        <p> {" - "} {ln.name}</p>
-                    
-                ))}
-    
+                  <strong>Languages</strong> :{" "}
+                  {item.languages.map((ln) => (
+                    <p>
+                      {" "}
+                      {" - "} {ln.name}
+                    </p>
+                  ))}
                 </div>
               </div>
 
@@ -78,7 +87,6 @@ const ProductList = () => {
           </section>
         </section>
       )}
-
     </>
   );
 };
